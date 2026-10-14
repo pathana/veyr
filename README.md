@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VEYR
 
-## Getting Started
+Agency site for **VEYR** — Pathana (web developer) + Sam (web designer).
 
-First, run the development server:
+Built with **Next.js** (App Router), **React 19**, **TypeScript**, **Tailwind CSS v4**, and **Motion**.
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | What it does |
+|---|---|
+| `npm run dev` | Dev server |
+| `npm run build` | Production build |
+| `npm run start` | Serve production build |
+| `npm run lint` | ESLint |
 
-## Learn More
+## Deploy (Vercel)
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this repo to GitHub.
+2. Import the project in [Vercel](https://vercel.com).
+3. Deploy — no env vars required for v1.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After you buy a domain, point it at Vercel and update `url` in [`content/site.ts`](content/site.ts).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Brand tokens (pre-logo)
 
-## Deploy on Vercel
+Colors live as CSS variables in [`app/globals.css`](app/globals.css):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `--background` / `--foreground` — near-black / off-white
+- `--accent-red` — Sam
+- `--accent-teal` — Pathana
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Swap values there when the logo and final palette land. The wordmark in the nav/footer is text-based until Sam’s logo files are ready — drop SVGs into `public/` and wire them in `components/layout/Nav.tsx` / `Footer.tsx`.
+
+## Contact form
+
+[`lib/actions.ts`](lib/actions.ts) validates and `console.info`s submissions. When you have an inbox:
+
+1. Add something like [Resend](https://resend.com) (or Formspree).
+2. Replace the placeholder log with a real send.
+3. Update `emailPlaceholder` in [`content/site.ts`](content/site.ts).
+
+## Content
+
+Typed content modules (no CMS yet):
+
+- [`content/site.ts`](content/site.ts) — name, tagline, nav
+- [`content/team.ts`](content/team.ts) — founders
+- [`content/services.ts`](content/services.ts) — services
+- [`content/projects.ts`](content/projects.ts) — case studies (placeholders)
+
+## Pages
+
+- `/` — Home
+- `/about` — Team
+- `/services` — Services
+- `/work` — Project index
+- `/work/[slug]` — Case study
+- `/contact` — Contact form

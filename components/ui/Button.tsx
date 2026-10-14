@@ -1,0 +1,51 @@
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+
+type ButtonProps = {
+  href?: string;
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "ghost" | "red" | "teal";
+  className?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+};
+
+const variants = {
+  primary:
+    "bg-foreground text-background hover:bg-white border border-transparent",
+  secondary:
+    "bg-transparent text-foreground border border-border hover:border-foreground/60 hover:bg-white/[0.03]",
+  ghost:
+    "bg-transparent text-muted hover:text-foreground border border-transparent px-0",
+  red: "bg-accent-red text-white hover:bg-accent-red-soft border border-transparent",
+  teal: "bg-accent-teal text-white hover:bg-accent-teal-soft border border-transparent",
+};
+
+export function Button({
+  href,
+  children,
+  variant = "primary",
+  className,
+  type = "button",
+  disabled,
+}: ButtonProps) {
+  const classes = cn(
+    "btn-shine relative inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-medium tracking-[0.04em] transition-[background-color,border-color,color] duration-300 disabled:opacity-50",
+    variants[variant],
+    className,
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <button type={type} disabled={disabled} className={classes}>
+      {children}
+    </button>
+  );
+}

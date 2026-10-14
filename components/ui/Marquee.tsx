@@ -1,0 +1,53 @@
+"use client";
+
+import { motion, useReducedMotion } from "motion/react";
+import { cn } from "@/lib/utils";
+
+type MarqueeProps = {
+  items: string[];
+  className?: string;
+  speed?: number;
+};
+
+export function Marquee({ items, className, speed = 28 }: MarqueeProps) {
+  const reduce = useReducedMotion();
+  const row = [...items, ...items];
+
+  return (
+    <div
+      className={cn(
+        "relative overflow-hidden border-y border-border bg-[#0c0c0c] py-5",
+        className,
+      )}
+      aria-hidden
+    >
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#0c0c0c] to-transparent md:w-32" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#0c0c0c] to-transparent md:w-32" />
+
+      <motion.div
+        className="flex w-max gap-12 whitespace-nowrap"
+        animate={reduce ? undefined : { x: ["0%", "-50%"] }}
+        transition={
+          reduce
+            ? undefined
+            : { duration: speed, ease: "linear", repeat: Infinity }
+        }
+      >
+        {row.map((item, i) => (
+          <span
+            key={`${item}-${i}`}
+            className="font-display flex items-center gap-12 text-sm font-semibold uppercase tracking-[0.32em] text-foreground/55 md:text-base"
+          >
+            <span>{item}</span>
+            <span
+              className={cn(
+                "h-1.5 w-1.5 rounded-full",
+                i % 2 === 0 ? "bg-accent-red" : "bg-accent-teal",
+              )}
+            />
+          </span>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
