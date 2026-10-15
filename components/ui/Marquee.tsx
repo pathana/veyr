@@ -1,6 +1,3 @@
-"use client";
-
-import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 type MarqueeProps = {
@@ -9,8 +6,7 @@ type MarqueeProps = {
   speed?: number;
 };
 
-export function Marquee({ items, className, speed = 28 }: MarqueeProps) {
-  const reduce = useReducedMotion();
+export function Marquee({ items, className, speed = 36 }: MarqueeProps) {
   const row = [...items, ...items];
 
   return (
@@ -24,14 +20,9 @@ export function Marquee({ items, className, speed = 28 }: MarqueeProps) {
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#0c0c0c] to-transparent md:w-32" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#0c0c0c] to-transparent md:w-32" />
 
-      <motion.div
-        className="flex w-max gap-12 whitespace-nowrap"
-        animate={reduce ? undefined : { x: ["0%", "-50%"] }}
-        transition={
-          reduce
-            ? undefined
-            : { duration: speed, ease: "linear", repeat: Infinity }
-        }
+      <div
+        className="marquee-track flex w-max gap-12 whitespace-nowrap"
+        style={{ animationDuration: `${speed}s` }}
       >
         {row.map((item, i) => (
           <span
@@ -47,7 +38,7 @@ export function Marquee({ items, className, speed = 28 }: MarqueeProps) {
             />
           </span>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }

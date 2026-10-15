@@ -3,8 +3,8 @@ export const siteConfig = {
   tagline: "Design & development for brands that move",
   description:
     "VEYR is a two-person design and development studio. WordPress specialists who build sharp, modern web experiences — and whatever else your project needs.",
-  url: "https://veyr.studio",
-  emailPlaceholder: "hello@veyr.studio",
+  url: "https://veyr.digital",
+  emailPlaceholder: "hello@veyr.digital",
 };
 
 export const navLinks = [

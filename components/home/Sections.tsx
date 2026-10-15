@@ -1,10 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion } from "motion/react";
 import { Reveal } from "@/components/ui/Reveal";
 import { TextReveal } from "@/components/ui/TextReveal";
-import { Marquee } from "@/components/ui/Marquee";
 import { Button } from "@/components/ui/Button";
 import { GiantIndex, SectionLabel } from "@/components/ui/Design";
 import { services } from "@/content/services";
@@ -47,25 +45,6 @@ export function Positioning() {
         </div>
       </div>
     </section>
-  );
-}
-
-export function SpeedStrip() {
-  return (
-    <Marquee
-      items={[
-        "WordPress",
-        "Custom builds",
-        "Typography",
-        "Performance",
-        "Design systems",
-        "Motion",
-        "VEYR",
-        "Signal red",
-        "Teal code",
-      ]}
-      speed={36}
-    />
   );
 }
 
@@ -228,19 +207,15 @@ export function FoundersStrip() {
 }
 
 export function FinalCta() {
-  const reduce = useReducedMotion();
-
   return (
-    <section className="grain relative overflow-hidden atmosphere">
+    <section className="grain relative overflow-hidden atmosphere content-auto">
       <div className="pointer-events-none absolute inset-0 grid-fade opacity-25" />
-      <motion.p
+      <p
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[28vw] font-bold leading-none tracking-[-0.08em] text-transparent [-webkit-text-stroke:1px_color-mix(in_srgb,var(--foreground)_8%,transparent)]"
-        animate={reduce ? undefined : { opacity: [0.4, 0.7, 0.4] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
         GO
-      </motion.p>
+      </p>
 
       <div className="section-pad relative z-10 mx-auto max-w-7xl py-32 md:py-44">
         <div className="mx-auto max-w-4xl text-center">
