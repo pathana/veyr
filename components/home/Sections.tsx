@@ -82,7 +82,7 @@ export function ServicesTeaser() {
                   "pointer-events-none absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100",
                   service.accent === "red" && "bg-accent-red",
                   service.accent === "teal" && "bg-accent-teal",
-                  service.accent === "neutral" && "bg-foreground",
+                  service.accent === "neutral" && "bg-[#2a2a2a]",
                 )}
               />
               <div className="section-pad relative z-10 mx-auto grid max-w-7xl gap-4 py-8 md:grid-cols-[auto_1fr_1.2fr_auto] md:items-center md:gap-10 md:py-10">
