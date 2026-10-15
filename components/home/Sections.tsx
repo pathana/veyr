@@ -142,8 +142,6 @@ export function FoundersStrip() {
                     : "bg-[radial-gradient(ellipse_at_85%_10%,color-mix(in_srgb,var(--accent-teal)_22%,transparent),transparent_55%),linear-gradient(200deg,#0d0d0d,#090909)]",
                 )}
               />
-              <div className="pointer-events-none absolute inset-0 noise-heavy opacity-60" />
-
               <span
                 aria-hidden
                 className={cn(
