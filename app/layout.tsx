@@ -24,7 +24,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Design & Development Studio`,
+    default: `${siteConfig.name} — Design & Full-Stack Team`,
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Design & Development Studio`,
+    title: `${siteConfig.name} — Design & Full-Stack Team`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Design & Development Studio`,
+    title: `${siteConfig.name} — Design & Full-Stack Team`,
     description: siteConfig.description,
   },
   robots: { index: true, follow: true },

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "WordPress builds, design systems, custom web apps, and ongoing care from VEYR.",
+    "Custom websites, brand & visual design, web apps, and ongoing care from VEYR — tailored to each client’s needs.",
 };
 
 export default function ServicesPage() {
@@ -18,11 +18,11 @@ export default function ServicesPage() {
         <Reveal>
           <SectionLabel accent="teal">Services</SectionLabel>
           <h1 className="font-display mt-5 max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
-            WordPress first. Flexible always.
+            Built around your brief. Not a default stack.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-            We know WordPress inside out — and we’ll meet you on whatever stack
-            makes the project better.
+            Tell us the goal — we’ll recommend the approach, design the experience,
+            and engineer the site that fits.
           </p>
         </Reveal>
       </section>
@@ -72,7 +72,7 @@ export default function ServicesPage() {
       <section className="section-pad relative z-10 mx-auto max-w-7xl py-24">
         <Reveal className="flex flex-col gap-8 border border-border bg-surface p-8 md:flex-row md:items-center md:justify-between md:p-12">
           <p className="font-display max-w-xl text-2xl font-semibold tracking-tight md:text-4xl">
-            Not sure which lane fits? Tell us the goal — we’ll recommend the stack.
+            Not sure where to start? Tell us the goal — we’ll map the path.
           </p>
           <Button href="/contact" variant="teal">
             Talk through a project

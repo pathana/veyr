@@ -12,15 +12,15 @@ export default function HomePage() {
       <Hero />
       <Marquee
         items={[
-          "WordPress",
-          "Custom builds",
+          "Custom websites",
+          "Brand design",
+          "Full-stack builds",
           "Typography",
           "Performance",
-          "Design systems",
-          "Motion",
+          "Campaigns",
           "VEYR",
-          "Signal red",
-          "Teal code",
+          "Client-shaped",
+          "Two-person team",
         ]}
         speed={36}
       />

@@ -1,6 +1,6 @@
 # VEYR
 
-Agency site for **VEYR** — Pathana (web developer) + Sam (web designer).
+Site for **VEYR** — Pathana (full stack engineer) + Sam (art director).
 
 Built with **Next.js** (App Router), **React 19**, **TypeScript**, **Tailwind CSS v4**, and **Motion**.
 

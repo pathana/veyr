@@ -21,8 +21,8 @@ export function Footer() {
             {siteConfig.name}
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
-            {siteConfig.tagline}. A two-person studio — design + development —
-            specializing in WordPress and ready for whatever your brief needs.
+            {siteConfig.tagline}. A two-person team — art direction + full-stack
+            engineering — building whatever your project calls for.
           </p>
           <div className="mt-8 flex gap-3">
             <span className="h-1 w-10 bg-accent-red" />
@@ -59,7 +59,7 @@ export function Footer() {
           <p className="mt-8 text-sm text-muted">
             {siteConfig.emailPlaceholder}
             <span className="mt-1 block text-xs text-muted/70">
-              Placeholder — domain coming soon
+              Inbox coming soon
             </span>
           </p>
         </div>

@@ -34,7 +34,7 @@ export function ContactForm() {
             required
             autoComplete="email"
             className={cn(fieldClass, "mt-2")}
-            placeholder="you@studio.com"
+            placeholder="you@company.com"
           />
         </label>
       </div>
@@ -43,12 +43,12 @@ export function ContactForm() {
         <span className="text-xs uppercase tracking-[0.18em] text-muted">Project type</span>
         <select
           name="projectType"
-          defaultValue="wordpress"
+          defaultValue="website"
           className={cn(fieldClass, "mt-2 appearance-none bg-background")}
         >
-          <option value="wordpress">WordPress</option>
-          <option value="design">Design / UI</option>
-          <option value="custom">Custom web app</option>
+          <option value="website">Custom website</option>
+          <option value="design">Brand / visual design</option>
+          <option value="app">Web app / product</option>
           <option value="care">Ongoing care</option>
           <option value="other">Not sure yet</option>
         </select>

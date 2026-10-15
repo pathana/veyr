@@ -24,20 +24,20 @@ export const projects: Project[] = [
     challenge:
       "The brand needed to feel premium online without losing the grit of the shop floor — fast load times, clear inventory, zero clutter.",
     approach:
-      "Custom WordPress theme, typography-forward layout, and a filtered inventory experience tuned for mobile shoppers.",
+      "Custom build with typography-forward layout and a filtered inventory experience tuned for mobile shoppers.",
     outcome:
       "Placeholder metrics — structure ready for real case-study numbers once the project ships.",
     accent: "red",
-    services: ["WordPress", "UI design"],
+    services: ["Custom website", "UI design"],
   },
   {
     slug: "signal-audio",
     title: "Signal Audio",
     client: "Placeholder client",
-    category: "Creative studio",
+    category: "Creative team",
     year: "2025",
     summary:
-      "A multimedia studio site that leads with sound and motion — portfolio-first, contact-second.",
+      "A multimedia site that leads with sound and motion — portfolio-first, contact-second.",
     challenge:
       "Show reel energy without a heavy video homepage that tanks performance on mobile.",
     approach:
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     outcome:
       "Placeholder — swap in real reel embeds and results when available.",
     accent: "teal",
-    services: ["Custom web", "Design system"],
+    services: ["Custom web", "Brand & visual"],
   },
   {
     slug: "ember-atelier",
@@ -58,11 +58,11 @@ export const projects: Project[] = [
     challenge:
       "Translate a tactile offline brand into a digital presence that still feels handmade.",
     approach:
-      "WordPress + carefully constrained type scale, large imagery, and editor blocks the team can update without breaking the look.",
+      "Constrained type scale, large imagery, and an editable content setup the team can update without breaking the look.",
     outcome:
       "Placeholder case study awaiting real launch data.",
     accent: "red",
-    services: ["WordPress", "Brand UI"],
+    services: ["Brand design", "Custom website"],
   },
   {
     slug: "kiln-collective",

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet Sam and Pathana — the designer–developer duo behind VEYR. WordPress specialists with a taste for modern stacks.",
+    "Meet Sam and Pathana — the two-person team behind VEYR. Art direction and full-stack engineering for websites that fit the brief.",
 };
 
 export default function AboutPage() {
@@ -18,12 +18,12 @@ export default function AboutPage() {
         <Reveal>
           <SectionLabel accent="red">About</SectionLabel>
           <h1 className="font-display mt-5 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
-            A designer and a developer who build like a studio of two.
+            A two-person team. Design and engineering in lockstep.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
             VEYR is Sam and Pathana — tomboy energy, sharp taste, and zero fluff.
-            We specialize in WordPress, but we don’t stop there when a project needs
-            something else.
+            We build websites tailored to each client’s needs, on whatever stack
+            makes the project better.
           </p>
         </Reveal>
       </section>
@@ -98,10 +98,10 @@ export default function AboutPage() {
             How we work
           </h2>
           <p className="mt-6 max-w-2xl text-muted leading-relaxed md:text-lg">
-            Design and development stay in the same conversation from day one —
+            Design and engineering stay in the same conversation from day one —
             no thrown-over-the-wall mockups, no “it looked different in Figma.”
-            WordPress is our home turf; Next.js and custom stacks are on the table
-            when they’re the better fit.
+            We pick the tools that fit the brief, then ship something you can
+            actually use and grow.
           </p>
           <div className="mt-10">
             <Button href="/contact" variant="secondary">

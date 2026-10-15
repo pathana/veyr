@@ -8,41 +8,41 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "wordpress",
-    title: "WordPress builds",
+    slug: "websites",
+    title: "Custom websites",
     summary:
-      "Our specialty. Custom themes, editor-friendly sites, and launches that clients can actually manage.",
+      "Marketing sites, portfolios, product launches — built on whatever stack fits the goal, not a one-size platform.",
     details: [
-      "Custom theme & block development",
-      "Performance and Core Web Vitals tuning",
-      "Migrations, redesigns, and rebuilds",
-      "Training so your team owns the CMS",
+      "End-to-end site design and build",
+      "Stack chosen for the brief (modern frameworks, CMS, or hybrid)",
+      "Performance, SEO foundations, and accessibility",
+      "Handoff and training so you can keep moving",
     ],
     accent: "teal",
   },
   {
     slug: "design",
-    title: "Design systems & UI",
+    title: "Brand & visual design",
     summary:
-      "Typography-led interfaces with a point of view — brand systems that hold up past the first mockup.",
+      "Identity, campaigns, and digital UI with a point of view — typography-led work that holds up past the first mockup.",
     details: [
-      "Visual identity for digital products",
-      "UI kits and component libraries",
-      "Landing pages and marketing sites",
-      "Design–dev handoff that actually sticks",
+      "Brand identity and visual systems",
+      "Marketing and campaign creative",
+      "UI design for web and product",
+      "Design–dev collaboration from day one",
     ],
     accent: "red",
   },
   {
-    slug: "custom",
-    title: "Custom web apps",
+    slug: "apps",
+    title: "Web apps & product",
     summary:
-      "Need something beyond WordPress? We adapt — Next.js, headless setups, and whatever fits the brief.",
+      "When a brochure site isn’t enough — dashboards, tools, integrations, and scoped builds that ship.",
     details: [
-      "Next.js and modern JAMstack builds",
-      "Headless WordPress + custom frontends",
-      "Integrations, forms, and tooling",
-      "Scoped MVPs for new products",
+      "Full-stack web applications",
+      "APIs, forms, and third-party integrations",
+      "MVPs and internal tools",
+      "Iterative launches with clear priorities",
     ],
     accent: "teal",
   },
@@ -53,7 +53,7 @@ export const services: Service[] = [
       "Sites age. We keep yours sharp — updates, small features, and the quiet work that prevents fires.",
     details: [
       "Retainers for updates and support",
-      "Security patches and backups",
+      "Security, backups, and dependency hygiene",
       "Content refreshes and A/B tweaks",
       "Priority when something breaks",
     ],

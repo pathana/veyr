@@ -20,7 +20,7 @@ export function Positioning() {
           <Reveal className="md:col-span-4 md:pt-8">
             <SectionLabel accent="teal">Who we are</SectionLabel>
             <p className="mt-8 max-w-[12rem] text-xs uppercase leading-relaxed tracking-[0.22em] text-muted">
-              A designer and a developer building like a full studio
+              Art direction + full-stack engineering
             </p>
           </Reveal>
 
@@ -34,10 +34,11 @@ export function Positioning() {
             </TextReveal>
             <Reveal delay={0.2}>
               <p className="mt-8 max-w-lg text-base leading-relaxed text-muted md:text-lg">
-                WordPress specialists who still build whatever the brief demands —
-                design-led, performance-minded, and allergic to template blandness.
+                We build websites tailored to each client — brand, marketing,
+                product, or something in between. Design-led, performance-minded,
+                and allergic to template blandness.
               </p>
-              <p className="mt-5 font-accent text-xl italic text-foreground/70 md:text-2xl">
+              <p className="mt-5 font-accent text-xl text-foreground/70 md:text-2xl">
                 Craft over clutter. Motion with purpose.
               </p>
             </Reveal>
@@ -119,7 +120,7 @@ export function FoundersStrip() {
             </h2>
           </div>
           <p className="font-accent max-w-xs text-lg italic text-muted">
-            Designer + developer. No middleman energy.
+            Art direction + engineering. No middleman energy.
           </p>
         </Reveal>
       </div>
@@ -231,7 +232,7 @@ export function FinalCta() {
           </TextReveal>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-lg font-accent text-xl italic text-muted">
-              WordPress, custom, or something in between.
+              Marketing site, brand refresh, product build — we’ll shape it to fit.
             </p>
             <div className="mt-12">
               <Button href="/contact" variant="red">

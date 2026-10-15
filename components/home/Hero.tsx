@@ -93,10 +93,10 @@ export function Hero() {
 
       <div className="relative z-10 border-t border-border/80">
         <div className="section-pad mx-auto grid max-w-7xl grid-cols-2 gap-4 py-4 text-[10px] uppercase tracking-[0.22em] text-muted md:grid-cols-4 md:py-5">
-          <span>WordPress specialty</span>
-          <span>Custom stacks</span>
+          <span>Any kind of website</span>
+          <span>Client-shaped builds</span>
           <span className="hidden md:inline">Typography-led</span>
-          <span className="hidden text-right md:inline">Est. duo studio</span>
+          <span className="hidden text-right md:inline">Two-person team</span>
         </div>
       </div>
 

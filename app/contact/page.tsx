@@ -6,7 +6,8 @@ import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Start a project with VEYR — design and development for brands that move.",
+  description:
+    "Start a project with VEYR — a two-person design and full-stack team building websites tailored to your needs.",
 };
 
 export default function ContactPage() {

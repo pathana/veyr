@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "VEYR",
-  tagline: "Design & development for brands that move",
+  tagline: "Design & development tailored to your brief",
   description:
-    "VEYR is a two-person design and development studio. WordPress specialists who build sharp, modern web experiences — and whatever else your project needs.",
+    "VEYR is a two-person team — art direction and full-stack engineering — building websites shaped around what each client actually needs.",
   url: "https://veyr.digital",
   emailPlaceholder: "hello@veyr.digital",
 };
