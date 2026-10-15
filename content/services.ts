@@ -1,9 +1,11 @@
+import type { Accent } from "@/lib/accents";
+
 export type Service = {
   slug: string;
   title: string;
   summary: string;
   details: string[];
-  accent: "red" | "teal" | "neutral";
+  accent: Accent;
 };
 
 export const services: Service[] = [
@@ -31,7 +33,7 @@ export const services: Service[] = [
       "UI design for web and product",
       "Design–dev collaboration from day one",
     ],
-    accent: "red",
+    accent: "magenta",
   },
   {
     slug: "apps",
@@ -44,7 +46,7 @@ export const services: Service[] = [
       "MVPs and internal tools",
       "Iterative launches with clear priorities",
     ],
-    accent: "teal",
+    accent: "violet",
   },
   {
     slug: "care",
@@ -57,6 +59,6 @@ export const services: Service[] = [
       "Content refreshes and A/B tweaks",
       "Priority when something breaks",
     ],
-    accent: "neutral",
+    accent: "lime",
   },
 ];

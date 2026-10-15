@@ -35,8 +35,10 @@ After you buy a domain, point it at Vercel and update `url` in [`content/site.ts
 Colors live as CSS variables in [`app/globals.css`](app/globals.css):
 
 - `--background` / `--foreground` — near-black / off-white
-- `--accent-red` — Sam
-- `--accent-teal` — Pathana
+- `--neon-teal` — Pathana / custom websites
+- `--neon-magenta` — Sam / brand design
+- `--neon-lime` — energy accent / ongoing care
+- `--neon-violet` / `--neon-orange` — additional service & project accents
 
 Swap values there when the logo and final palette land. The wordmark in the nav/footer is text-based until Sam’s logo files are ready — drop SVGs into `public/` and wire them in `components/layout/Nav.tsx` / `Footer.tsx`.
 

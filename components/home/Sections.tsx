@@ -7,6 +7,15 @@ import { Button } from "@/components/ui/Button";
 import { GiantIndex, SectionLabel } from "@/components/ui/Design";
 import { services } from "@/content/services";
 import { founders } from "@/content/team";
+import {
+  accentDot,
+  accentHoverFill,
+  accentHoverMuted,
+  accentHoverText,
+  accentStrokeHover,
+  accentText,
+  accentTextMuted,
+} from "@/lib/accents";
 import { cn } from "@/lib/utils";
 
 export function Positioning() {
@@ -55,7 +64,7 @@ export function ServicesTeaser() {
       <div className="section-pad mx-auto max-w-7xl py-20 md:py-28">
         <Reveal className="mb-14 flex flex-col gap-6 md:mb-20 md:flex-row md:items-end md:justify-between">
           <div>
-            <SectionLabel accent="red">Services</SectionLabel>
+            <SectionLabel accent="lime">Services</SectionLabel>
             <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
               What we ship
             </h2>
@@ -70,33 +79,46 @@ export function ServicesTeaser() {
         {services.map((service, i) => (
           <Reveal key={service.slug} delay={i * 0.04}>
             <Link
-              href="/services"
-             
-              className={cn(
-                "group relative block overflow-hidden border-b border-border last:border-b-0",
-              )}
+              href={`/services#${service.slug}`}
+              className="group relative block overflow-hidden border-b border-border last:border-b-0"
             >
               <span
                 aria-hidden
                 className={cn(
                   "pointer-events-none absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100",
-                  service.accent === "red" && "bg-accent-red",
-                  service.accent === "teal" && "bg-accent-teal",
-                  service.accent === "neutral" && "bg-[#2a2a2a]",
+                  accentHoverFill[service.accent],
                 )}
               />
               <div className="section-pad relative z-10 mx-auto grid max-w-7xl gap-4 py-8 md:grid-cols-[auto_1fr_1.2fr_auto] md:items-center md:gap-10 md:py-10">
                 <GiantIndex
                   value={String(i + 1).padStart(2, "0")}
-                  className="!text-[3.5rem] transition-colors duration-300 group-hover:!text-transparent group-hover:[-webkit-text-stroke:1px_rgba(255,255,255,0.55)] md:!text-[4.5rem]"
+                  className={cn(
+                    "!text-[3.5rem] transition-colors duration-300 group-hover:!text-transparent md:!text-[4.5rem]",
+                    accentStrokeHover[service.accent],
+                  )}
                 />
-                <h3 className="font-display text-2xl font-semibold tracking-tight transition-colors duration-300 group-hover:text-white md:text-4xl">
+                <h3
+                  className={cn(
+                    "font-display text-2xl font-semibold tracking-tight transition-colors duration-300 md:text-4xl",
+                    accentHoverText[service.accent],
+                  )}
+                >
                   {service.title}
                 </h3>
-                <p className="max-w-md text-sm leading-relaxed text-muted transition-colors duration-300 group-hover:text-white/80 md:text-base">
+                <p
+                  className={cn(
+                    "max-w-md text-sm leading-relaxed text-muted transition-colors duration-300 md:text-base",
+                    accentHoverMuted[service.accent],
+                  )}
+                >
                   {service.summary}
                 </p>
-                <span className="hidden text-sm text-muted transition-colors duration-300 group-hover:text-white md:inline">
+                <span
+                  className={cn(
+                    "hidden text-sm text-muted transition-colors duration-300 md:inline",
+                    accentHoverText[service.accent],
+                  )}
+                >
                   →
                 </span>
               </div>
@@ -136,18 +158,19 @@ export function FoundersStrip() {
             >
               <div
                 aria-hidden
-                className={cn(
-                  "absolute inset-0 opacity-90 transition-opacity duration-500",
-                  person.accent === "red"
-                    ? "bg-[radial-gradient(ellipse_at_15%_10%,color-mix(in_srgb,var(--accent-red)_22%,transparent),transparent_55%),linear-gradient(160deg,#0d0d0d,#090909)]"
-                    : "bg-[radial-gradient(ellipse_at_85%_10%,color-mix(in_srgb,var(--accent-teal)_22%,transparent),transparent_55%),linear-gradient(200deg,#0d0d0d,#090909)]",
-                )}
+                className="absolute inset-0 opacity-90"
+                style={{
+                  background:
+                    person.accent === "magenta"
+                      ? "radial-gradient(ellipse at 15% 10%, color-mix(in srgb, var(--neon-magenta) 24%, transparent), transparent 55%), linear-gradient(160deg,#0d0d0d,#090909)"
+                      : "radial-gradient(ellipse at 85% 10%, color-mix(in srgb, var(--neon-teal) 24%, transparent), transparent 55%), linear-gradient(200deg,#0d0d0d,#090909)",
+                }}
               />
               <span
                 aria-hidden
                 className={cn(
                   "pointer-events-none absolute -right-2 top-0 font-display text-[13rem] font-bold leading-none tracking-[-0.08em] transition-transform duration-700 md:text-[17rem]",
-                  person.accent === "red" ? "text-accent-red/[0.1]" : "text-accent-teal/[0.1]",
+                  accentTextMuted[person.accent],
                   "group-hover:-translate-y-2",
                 )}
               >
@@ -159,7 +182,7 @@ export function FoundersStrip() {
                   <p
                     className={cn(
                       "text-[11px] uppercase tracking-[0.28em]",
-                      person.accent === "red" ? "text-accent-red-soft" : "text-accent-teal-soft",
+                      accentText[person.accent],
                     )}
                   >
                     {person.role}
@@ -167,12 +190,7 @@ export function FoundersStrip() {
                   <h3 className="font-display mt-4 text-5xl font-semibold tracking-tight md:text-7xl">
                     {person.name}
                   </h3>
-                  <div
-                    className={cn(
-                      "mt-6 h-1 w-16",
-                      person.accent === "red" ? "bg-accent-red" : "bg-accent-teal",
-                    )}
-                  />
+                  <div className={cn("mt-6 h-1 w-16", accentDot[person.accent])} />
                 </div>
                 <div>
                   <p className="max-w-md text-sm leading-relaxed text-foreground/80 md:text-base">
@@ -219,7 +237,7 @@ export function FinalCta() {
       <div className="section-pad relative z-10 mx-auto max-w-7xl py-32 md:py-44">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
-            <SectionLabel className="justify-center" accent="red">
+            <SectionLabel className="justify-center" accent="lime">
               Start a project
             </SectionLabel>
           </Reveal>
@@ -235,9 +253,9 @@ export function FinalCta() {
               Marketing site, brand refresh, product build — we’ll shape it to fit.
             </p>
             <div className="mt-12">
-              <Button href="/contact" variant="red">
-                Get in touch
-              </Button>
+            <Button href="/contact" variant="lime">
+              Get in touch
+            </Button>
             </div>
           </Reveal>
         </div>

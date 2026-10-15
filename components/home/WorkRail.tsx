@@ -5,6 +5,7 @@ import { AbstractPanel, SectionLabel } from "@/components/ui/Design";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { projects } from "@/content/projects";
+import { accentText } from "@/lib/accents";
 import { cn } from "@/lib/utils";
 
 export function WorkRail() {
@@ -53,7 +54,7 @@ export function WorkRail() {
               <span
                 className={cn(
                   "mt-2 text-[10px] uppercase tracking-[0.24em]",
-                  project.accent === "red" ? "text-accent-red-soft" : "text-accent-teal-soft",
+                  accentText[project.accent],
                 )}
               >
                 {project.year}

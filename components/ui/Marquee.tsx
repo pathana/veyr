@@ -1,5 +1,13 @@
 import { cn } from "@/lib/utils";
 
+const neonDots = [
+  "bg-neon-teal",
+  "bg-neon-lime",
+  "bg-neon-magenta",
+  "bg-neon-violet",
+  "bg-neon-orange",
+] as const;
+
 type MarqueeProps = {
   items: string[];
   className?: string;
@@ -30,12 +38,7 @@ export function Marquee({ items, className, speed = 36 }: MarqueeProps) {
             className="font-display flex items-center gap-12 text-sm font-semibold uppercase tracking-[0.32em] text-foreground/55 md:text-base"
           >
             <span>{item}</span>
-            <span
-              className={cn(
-                "h-1.5 w-1.5 rounded-full",
-                i % 2 === 0 ? "bg-accent-red" : "bg-accent-teal",
-              )}
-            />
+            <span className={cn("h-1.5 w-1.5 rounded-full", neonDots[i % neonDots.length])} />
           </span>
         ))}
       </div>

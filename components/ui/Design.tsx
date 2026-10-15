@@ -1,4 +1,6 @@
 import { cn } from "@/lib/utils";
+import type { Accent } from "@/lib/accents";
+import { accentCssVar, accentDot } from "@/lib/accents";
 
 export function SectionLabel({
   children,
@@ -7,7 +9,7 @@ export function SectionLabel({
 }: {
   children: React.ReactNode;
   className?: string;
-  accent?: "red" | "teal" | "none";
+  accent?: Accent | "none";
 }) {
   return (
     <p
@@ -17,13 +19,7 @@ export function SectionLabel({
       )}
     >
       {accent && accent !== "none" ? (
-        <span
-          className={cn(
-            "h-px w-8",
-            accent === "red" ? "bg-accent-red" : "bg-accent-teal",
-          )}
-          aria-hidden
-        />
+        <span className={cn("h-px w-8", accentDot[accent])} aria-hidden />
       ) : null}
       {children}
     </p>
@@ -51,34 +47,24 @@ export function GiantIndex({
 }
 
 export function AbstractPanel({
-  accent = "red",
+  accent = "teal",
   label,
   className,
 }: {
-  accent?: "red" | "teal";
+  accent?: Accent;
   label?: string;
   className?: string;
 }) {
   return (
     <div
       className={cn("media-panel aspect-[16/10] w-full md:aspect-[5/3]", className)}
-      style={
-        {
-          "--panel-accent":
-            accent === "red" ? "var(--accent-red)" : "var(--accent-teal)",
-        } as React.CSSProperties
-      }
+      style={{ "--panel-accent": accentCssVar[accent] } as React.CSSProperties}
     >
       <div className="absolute inset-0 z-[2] flex items-end justify-between p-5 md:p-7">
         <span className="font-display text-xs uppercase tracking-[0.28em] text-white/70">
           {label ?? "VEYR"}
         </span>
-        <span
-          className={cn(
-            "h-2 w-2 rounded-full",
-            accent === "red" ? "bg-accent-red" : "bg-accent-teal",
-          )}
-        />
+        <span className={cn("h-2 w-2 rounded-full", accentDot[accent])} />
       </div>
       <div className="absolute right-[-8%] top-[-12%] z-[1] font-display text-[8rem] font-bold leading-none tracking-[-0.08em] text-white/[0.06] md:text-[11rem]">
         V

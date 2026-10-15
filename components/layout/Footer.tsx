@@ -25,8 +25,9 @@ export function Footer() {
             engineering — building whatever your project calls for.
           </p>
           <div className="mt-8 flex gap-3">
-            <span className="h-1 w-10 bg-accent-red" />
-            <span className="h-1 w-10 bg-accent-teal" />
+            <span className="h-1 w-10 bg-neon-magenta" />
+            <span className="h-1 w-10 bg-neon-teal" />
+            <span className="h-1 w-10 bg-neon-lime" />
           </div>
         </div>
 
@@ -37,7 +38,7 @@ export function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-foreground/90 transition-colors hover:text-accent-teal-soft"
+                  className="text-sm text-foreground/90 transition-colors hover:text-neon-teal-soft"
                 >
                   {link.label}
                 </Link>

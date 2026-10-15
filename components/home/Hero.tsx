@@ -34,7 +34,7 @@ export function Hero() {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-muted"
         >
-          <span className="h-px w-8 bg-accent-red" />
+          <span className="h-px w-8 bg-neon-lime" />
           Design + Development
         </motion.p>
 
@@ -104,14 +104,14 @@ export function Hero() {
         initial={reduce ? false : { scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute bottom-0 left-0 right-0 h-px origin-left bg-gradient-to-r from-accent-red via-white/20 to-accent-teal"
+        className="absolute bottom-0 left-0 right-0 h-px origin-left bg-gradient-to-r from-neon-magenta via-neon-lime to-neon-teal"
       />
     </section>
   );
 }
 
 function letterClass(i: number) {
-  if (i === 0) return "inline-block text-accent-red";
-  if (i === siteConfig.name.length - 1) return "inline-block text-accent-teal";
+  if (i === 0) return "inline-block text-neon-magenta";
+  if (i === siteConfig.name.length - 1) return "inline-block text-neon-teal";
   return "inline-block";
 }

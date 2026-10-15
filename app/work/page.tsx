@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { AbstractPanel, SectionLabel } from "@/components/ui/Design";
 import { projects } from "@/content/projects";
+import { accentText } from "@/lib/accents";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -53,9 +54,7 @@ export default function WorkPage() {
                         <span
                           className={cn(
                             "text-[10px] uppercase tracking-[0.24em]",
-                            project.accent === "red"
-                              ? "text-accent-red-soft"
-                              : "text-accent-teal-soft",
+                            accentText[project.accent],
                           )}
                         >
                           {project.year}

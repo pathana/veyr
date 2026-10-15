@@ -1,7 +1,9 @@
+import type { Accent } from "@/lib/accents";
+
 export type Founder = {
   name: string;
   role: string;
-  accent: "red" | "teal";
+  accent: Accent;
   bio: string[];
   traits: string[];
 };
@@ -10,7 +12,7 @@ export const founders: Founder[] = [
   {
     name: "Sam",
     role: "Art Director",
-    accent: "red",
+    accent: "magenta",
     bio: [
       "Samantha Harrington is the visual force behind VEYR. With a BFA in Graphic Design and over a decade across brand identity, campaigns, web design, print, and large-format work, she shapes how a brand looks, feels, and shows up everywhere it needs to.",
       "Her background spans creative project management at Millennium Agency, design for brands like Harley-Davidson and Planet Fitness, and ongoing digital/SEO work — plus photography when the story needs a lens. Off the clock she’s on two wheels, knows cars inside out, and wears a lot of black (not goth — just cool).",

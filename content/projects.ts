@@ -1,3 +1,5 @@
+import type { Accent } from "@/lib/accents";
+
 export type Project = {
   slug: string;
   title: string;
@@ -8,7 +10,7 @@ export type Project = {
   challenge: string;
   approach: string;
   outcome: string;
-  accent: "red" | "teal";
+  accent: Accent;
   services: string[];
 };
 
@@ -27,7 +29,7 @@ export const projects: Project[] = [
       "Custom build with typography-forward layout and a filtered inventory experience tuned for mobile shoppers.",
     outcome:
       "Placeholder metrics — structure ready for real case-study numbers once the project ships.",
-    accent: "red",
+    accent: "magenta",
     services: ["Custom website", "UI design"],
   },
   {
@@ -61,7 +63,7 @@ export const projects: Project[] = [
       "Constrained type scale, large imagery, and an editable content setup the team can update without breaking the look.",
     outcome:
       "Placeholder case study awaiting real launch data.",
-    accent: "red",
+    accent: "lime",
     services: ["Brand design", "Custom website"],
   },
   {
@@ -78,7 +80,7 @@ export const projects: Project[] = [
       "Componentized templates, clear type hierarchy, and a handover playbook for their in-house team.",
     outcome:
       "Placeholder — ready for screenshots and testimonials.",
-    accent: "teal",
+    accent: "violet",
     services: ["Design system", "Ongoing care"],
   },
 ];

@@ -3,6 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { GiantIndex, SectionLabel } from "@/components/ui/Design";
 import { services } from "@/content/services";
+import { accentDot, accentHoverFill } from "@/lib/accents";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export default function ServicesPage() {
     <div className="page-shell" data-mark="SERVICES">
       <section className="section-pad relative z-10 mx-auto max-w-7xl pb-16 pt-32 md:pb-24 md:pt-40">
         <Reveal>
-          <SectionLabel accent="teal">Services</SectionLabel>
+          <SectionLabel accent="lime">Services</SectionLabel>
           <h1 className="font-display mt-5 max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
             Built around your brief. Not a default stack.
           </h1>
@@ -40,14 +41,7 @@ export default function ServicesPage() {
                   className="!text-[5rem] md:!text-[7rem]"
                 />
                 <div>
-                  <span
-                    className={cn(
-                      "mb-5 block h-px w-14",
-                      service.accent === "red" && "bg-accent-red",
-                      service.accent === "teal" && "bg-accent-teal",
-                      service.accent === "neutral" && "bg-muted",
-                    )}
-                  />
+                  <span className={cn("mb-5 block h-px w-14", accentDot[service.accent])} />
                   <h2 className="font-display text-3xl font-semibold tracking-tight md:text-5xl">
                     {service.title}
                   </h2>
@@ -64,6 +58,13 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </div>
+              <span
+                aria-hidden
+                className={cn(
+                  "pointer-events-none absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100",
+                  accentHoverFill[service.accent],
+                )}
+              />
             </article>
           </Reveal>
         ))}
@@ -74,7 +75,7 @@ export default function ServicesPage() {
           <p className="font-display max-w-xl text-2xl font-semibold tracking-tight md:text-4xl">
             Not sure where to start? Tell us the goal — we’ll map the path.
           </p>
-          <Button href="/contact" variant="teal">
+          <Button href="/contact" variant="lime">
             Talk through a project
           </Button>
         </Reveal>

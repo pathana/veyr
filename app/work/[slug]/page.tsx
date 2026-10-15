@@ -43,10 +43,7 @@ export default async function ProjectPage({ params }: Props) {
           >
             ← All work
           </Link>
-          <SectionLabel
-            className="mt-8"
-            accent={project.accent === "red" ? "red" : "teal"}
-          >
+          <SectionLabel className="mt-8" accent={project.accent}>
             {project.category} · {project.year}
           </SectionLabel>
           <h1 className="font-display mt-4 text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
@@ -102,7 +99,7 @@ export default async function ProjectPage({ params }: Props) {
           <p className="text-[11px] uppercase tracking-[0.24em] text-muted">Next project</p>
           <Link
             href={`/work/${next.slug}`}
-            className="font-display mt-3 block text-3xl font-semibold tracking-tight transition-colors hover:text-accent-teal-soft md:text-5xl"
+            className="font-display mt-3 block text-3xl font-semibold tracking-tight transition-colors hover:text-neon-teal-soft md:text-5xl"
           >
             {next.title} →
           </Link>

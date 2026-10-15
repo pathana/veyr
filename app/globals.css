@@ -1,17 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060606;
-  --foreground: #f3f2ef;
-  --muted: #8c8b86;
-  --surface: #0e0e0e;
-  --surface-elevated: #151515;
-  --border: #232323;
-  --accent-red: #e10600;
-  --accent-red-soft: #ff2d22;
-  --accent-teal: #12a394;
-  --accent-teal-soft: #2ad4c0;
-  --brand: #f3f2ef;
+  --background: #050505;
+  --foreground: #f4f4f0;
+  --muted: #8a8a84;
+  --surface: #0c0c0c;
+  --surface-elevated: #141414;
+  --border: #262626;
+
+  /* Marathon-style neon system */
+  --neon-teal: #00e8c8;
+  --neon-teal-soft: #5cffdf;
+  --neon-lime: #d4ff00;
+  --neon-lime-soft: #e8ff66;
+  --neon-magenta: #ff2d6a;
+  --neon-magenta-soft: #ff6b9a;
+  --neon-violet: #b44dff;
+  --neon-violet-soft: #d08cff;
+  --neon-orange: #ff8a1a;
+  --neon-orange-soft: #ffb45c;
+
+  /* Brand aliases (Sam = magenta, Pathana = teal) */
+  --accent-red: var(--neon-magenta);
+  --accent-red-soft: var(--neon-magenta-soft);
+  --accent-teal: var(--neon-teal);
+  --accent-teal-soft: var(--neon-teal-soft);
+  --brand: #f4f4f0;
 }
 
 @theme inline {
@@ -21,6 +35,16 @@
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
   --color-border: var(--border);
+  --color-neon-teal: var(--neon-teal);
+  --color-neon-teal-soft: var(--neon-teal-soft);
+  --color-neon-lime: var(--neon-lime);
+  --color-neon-lime-soft: var(--neon-lime-soft);
+  --color-neon-magenta: var(--neon-magenta);
+  --color-neon-magenta-soft: var(--neon-magenta-soft);
+  --color-neon-violet: var(--neon-violet);
+  --color-neon-violet-soft: var(--neon-violet-soft);
+  --color-neon-orange: var(--neon-orange);
+  --color-neon-orange-soft: var(--neon-orange-soft);
   --color-accent-red: var(--accent-red);
   --color-accent-red-soft: var(--accent-red-soft);
   --color-accent-teal: var(--accent-teal);
@@ -47,8 +71,8 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent-red) 50%, transparent);
-  color: white;
+  background: color-mix(in srgb, var(--neon-lime) 55%, transparent);
+  color: #050505;
 }
 
 .font-display {
@@ -75,7 +99,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 1;
-  opacity: 0.045;
+  opacity: 0.04;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
@@ -129,10 +153,10 @@ body {
 
 .atmosphere {
   background:
-    radial-gradient(ellipse 95% 65% at 6% 12%, color-mix(in srgb, var(--accent-red) 24%, transparent), transparent 58%),
-    radial-gradient(ellipse 80% 55% at 94% 22%, color-mix(in srgb, var(--accent-teal) 18%, transparent), transparent 52%),
-    radial-gradient(ellipse 55% 40% at 50% 100%, color-mix(in srgb, var(--accent-teal) 8%, transparent), transparent 65%),
-    linear-gradient(168deg, #090909 0%, #060606 40%, #0a1010 100%);
+    radial-gradient(ellipse 90% 60% at 8% 10%, color-mix(in srgb, var(--neon-magenta) 22%, transparent), transparent 55%),
+    radial-gradient(ellipse 75% 50% at 92% 20%, color-mix(in srgb, var(--neon-teal) 20%, transparent), transparent 52%),
+    radial-gradient(ellipse 55% 40% at 50% 100%, color-mix(in srgb, var(--neon-lime) 12%, transparent), transparent 60%),
+    linear-gradient(168deg, #090909 0%, #050505 42%, #061210 100%);
 }
 
 .grid-fade {
@@ -228,8 +252,8 @@ body {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(145deg, color-mix(in srgb, var(--panel-accent, var(--accent-red)) 40%, transparent), transparent 50%),
-    radial-gradient(circle at 72% 22%, color-mix(in srgb, white 14%, transparent), transparent 42%),
+    linear-gradient(145deg, color-mix(in srgb, var(--panel-accent, var(--neon-teal)) 42%, transparent), transparent 50%),
+    radial-gradient(circle at 72% 22%, color-mix(in srgb, white 12%, transparent), transparent 42%),
     linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 45%);
 }
 

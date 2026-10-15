@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const initial: ContactState = { ok: false, message: "" };
 
 const fieldClass =
-  "w-full bg-transparent border-b border-border px-0 py-3 text-foreground placeholder:text-muted/60 outline-none transition-colors focus:border-accent-teal";
+  "w-full bg-transparent border-b border-border px-0 py-3 text-foreground placeholder:text-muted/60 outline-none transition-colors focus:border-neon-teal";
 
 export function ContactForm() {
   const [state, action, pending] = useActionState(submitContact, initial);
@@ -73,7 +73,7 @@ export function ContactForm() {
           <p
             className={cn(
               "text-sm",
-              state.ok ? "text-accent-teal-soft" : "text-accent-red-soft",
+              state.ok ? "text-neon-teal-soft" : "text-neon-magenta-soft",
             )}
             role="status"
           >

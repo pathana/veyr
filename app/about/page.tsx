@@ -3,6 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/Design";
 import { founders } from "@/content/team";
+import { accentDot, accentText, accentTextMuted } from "@/lib/accents";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export default function AboutPage() {
     <div className="page-shell" data-mark="ABOUT">
       <section className="section-pad relative z-10 mx-auto max-w-7xl pb-16 pt-32 md:pb-24 md:pt-40">
         <Reveal>
-          <SectionLabel accent="red">About</SectionLabel>
+          <SectionLabel accent="magenta">About</SectionLabel>
           <h1 className="font-display mt-5 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
             A two-person team. Design and engineering in lockstep.
           </h1>
@@ -32,19 +33,19 @@ export default function AboutPage() {
         {founders.map((person, i) => (
           <div
             key={person.name}
-            className={cn(
-              "relative overflow-hidden border-border",
-              i > 0 && "border-t",
-              person.accent === "red"
-                ? "bg-[radial-gradient(ellipse_at_0%_0%,color-mix(in_srgb,var(--accent-red)_14%,transparent),transparent_50%)]"
-                : "bg-[radial-gradient(ellipse_at_100%_0%,color-mix(in_srgb,var(--accent-teal)_14%,transparent),transparent_50%)]",
-            )}
+            className={cn("relative overflow-hidden border-border", i > 0 && "border-t")}
+            style={{
+              background:
+                person.accent === "magenta"
+                  ? "radial-gradient(ellipse at 0% 0%, color-mix(in srgb, var(--neon-magenta) 16%, transparent), transparent 50%)"
+                  : "radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--neon-teal) 16%, transparent), transparent 50%)",
+            }}
           >
             <span
               aria-hidden
               className={cn(
                 "pointer-events-none absolute -right-6 top-6 font-display text-[10rem] font-bold leading-none tracking-[-0.08em] md:text-[14rem]",
-                person.accent === "red" ? "text-accent-red/[0.07]" : "text-accent-teal/[0.07]",
+                accentTextMuted[person.accent],
               )}
             >
               {person.name[0]}
@@ -54,7 +55,7 @@ export default function AboutPage() {
                 <p
                   className={cn(
                     "text-[11px] uppercase tracking-[0.28em]",
-                    person.accent === "red" ? "text-accent-red-soft" : "text-accent-teal-soft",
+                    accentText[person.accent],
                   )}
                 >
                   {person.role}
@@ -62,12 +63,7 @@ export default function AboutPage() {
                 <h2 className="font-display mt-3 text-5xl font-semibold tracking-tight md:text-7xl">
                   {person.name}
                 </h2>
-                <div
-                  className={cn(
-                    "mt-6 h-1 w-16",
-                    person.accent === "red" ? "bg-accent-red" : "bg-accent-teal",
-                  )}
-                />
+                <div className={cn("mt-6 h-1 w-16", accentDot[person.accent])} />
                 <ul className="mt-10 space-y-3">
                   {person.traits.map((trait) => (
                     <li key={trait} className="border-b border-border/70 pb-3 text-sm text-muted">

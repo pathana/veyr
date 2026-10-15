@@ -79,7 +79,7 @@ export function Nav() {
                   {link.label}
                   <span
                     className={cn(
-                      "absolute -bottom-1 left-0 h-px w-full origin-left bg-gradient-to-r from-accent-red to-accent-teal transition-transform duration-300 ease-out",
+                      "absolute -bottom-1 left-0 h-px w-full origin-left bg-gradient-to-r from-neon-lime to-neon-teal transition-transform duration-300 ease-out",
                       active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
                     )}
                   />
@@ -142,7 +142,7 @@ export function Nav() {
                   </Link>
                 </motion.div>
               ))}
-              <Button href="/contact" variant="red" className="mt-6 w-full uppercase tracking-[0.14em]">
+              <Button href="/contact" variant="lime" className="mt-6 w-full uppercase tracking-[0.14em]">
                 Start a project
               </Button>
             </nav>
