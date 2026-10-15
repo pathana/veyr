@@ -1,34 +1,24 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, Instrument_Serif } from "next/font/google";
+import { Space_Grotesk, Outfit } from "next/font/google";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
-import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { siteConfig } from "@/content/site";
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["500", "600", "700"],
   display: "swap",
   preload: true,
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
   preload: true,
-});
-
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["italic"],
-  display: "swap",
-  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -57,14 +47,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${dmSans.variable} ${instrument.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
-        <SmoothScroll>
-          <Nav />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </SmoothScroll>
+        <Nav />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -37,7 +37,7 @@ export function Positioning() {
                 WordPress specialists who still build whatever the brief demands —
                 design-led, performance-minded, and allergic to template blandness.
               </p>
-              <p className="mt-5 font-serif-accent text-xl italic text-foreground/70 md:text-2xl">
+              <p className="mt-5 font-accent text-xl italic text-foreground/70 md:text-2xl">
                 Craft over clutter. Motion with purpose.
               </p>
             </Reveal>
@@ -118,7 +118,7 @@ export function FoundersStrip() {
               Same wavelength.
             </h2>
           </div>
-          <p className="font-serif-accent max-w-xs text-lg italic text-muted">
+          <p className="font-accent max-w-xs text-lg italic text-muted">
             Designer + developer. No middleman energy.
           </p>
         </Reveal>
@@ -230,7 +230,7 @@ export function FinalCta() {
             Got a brief? Let’s make it move.
           </TextReveal>
           <Reveal delay={0.2}>
-            <p className="mx-auto mt-6 max-w-lg font-serif-accent text-xl italic text-muted">
+            <p className="mx-auto mt-6 max-w-lg font-accent text-xl italic text-muted">
               WordPress, custom, or something in between.
             </p>
             <div className="mt-12">

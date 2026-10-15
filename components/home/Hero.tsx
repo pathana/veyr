@@ -9,14 +9,7 @@ export function Hero() {
   const letters = siteConfig.name.split("");
 
   return (
-    <section className="grain relative flex min-h-[100svh] flex-col justify-end overflow-hidden atmosphere">
-      <div className="pointer-events-none absolute inset-0 z-0 grid-fade opacity-35" />
-
-      <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="orb orb-red absolute -left-28 top-[12%] h-[22rem] w-[22rem] rounded-full bg-accent-red/28 blur-[100px]" />
-        <div className="orb orb-teal absolute -right-24 top-[22%] h-[26rem] w-[26rem] rounded-full bg-accent-teal/22 blur-[110px]" />
-      </div>
-
+    <section className="hero-shell relative flex min-h-[100svh] flex-col justify-end overflow-hidden atmosphere">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-[18%] z-[1] section-pad mx-auto max-w-7xl"
@@ -28,7 +21,7 @@ export function Hero() {
 
       <div className="pointer-events-none absolute inset-x-0 top-24 z-[2] section-pad mx-auto hidden max-w-7xl items-center justify-between text-[10px] uppercase tracking-[0.3em] text-muted/75 md:flex md:top-28">
         <span>Based remotely · US</span>
-        <span className="font-serif-accent italic normal-case tracking-normal text-foreground/50">
+        <span className="font-accent normal-case tracking-wide text-foreground/50">
           design that moves
         </span>
         <span>Available for projects</span>
@@ -38,7 +31,7 @@ export function Hero() {
         <motion.p
           initial={reduce ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-muted"
         >
           <span className="h-px w-8 bg-accent-red" />
@@ -56,8 +49,8 @@ export function Hero() {
                 initial={reduce ? false : { y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{
-                  duration: 0.65,
-                  delay: 0.06 + i * 0.06,
+                  duration: 0.55,
+                  delay: 0.05 + i * 0.05,
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
@@ -69,23 +62,23 @@ export function Hero() {
 
         <div className="mt-10 grid gap-10 md:mt-12 md:grid-cols-12 md:items-end">
           <motion.div
-            initial={reduce ? false : { opacity: 0, y: 20 }}
+            initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.45, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="md:col-span-5"
           >
             <p className="max-w-md text-lg leading-relaxed text-foreground/88 md:text-xl">
               {siteConfig.tagline}.
             </p>
-            <p className="mt-3 font-serif-accent text-lg italic text-muted md:text-xl">
+            <p className="mt-3 font-accent text-lg text-muted md:text-xl">
               Two people. Sharp taste. Zero fluff.
             </p>
           </motion.div>
 
           <motion.div
-            initial={reduce ? false : { opacity: 0, y: 20 }}
+            initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.48, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.45, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-wrap gap-3 md:col-span-4 md:col-start-9 md:justify-end"
           >
             <Button href="/work" variant="primary">
@@ -110,7 +103,7 @@ export function Hero() {
       <motion.div
         initial={reduce ? false : { scaleX: 0 }}
         animate={{ scaleX: 1 }}
-        transition={{ duration: 0.9, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className="absolute bottom-0 left-0 right-0 h-px origin-left bg-gradient-to-r from-accent-red via-white/20 to-accent-teal"
       />
     </section>
