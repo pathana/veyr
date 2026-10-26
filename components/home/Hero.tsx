@@ -10,16 +10,23 @@ export function Hero() {
 
   return (
     <section className="hero-shell relative flex min-h-[100svh] flex-col justify-end overflow-hidden atmosphere">
+      <div aria-hidden className="pixel-grid pointer-events-none absolute inset-0 z-[1]" />
+      <div aria-hidden className="scanlines pointer-events-none absolute inset-0 z-[1]" />
+      <span aria-hidden className="hud-corner left-4 top-24 border-l-2 border-t-2 md:left-8 md:top-28" />
+      <span aria-hidden className="hud-corner right-4 top-24 border-r-2 border-t-2 md:right-8 md:top-28" />
+      <span aria-hidden className="hud-corner bottom-16 left-4 border-b-2 border-l-2 md:left-8" />
+      <span aria-hidden className="hud-corner bottom-16 right-4 border-b-2 border-r-2 md:right-8" />
+
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-[18%] z-[1] section-pad mx-auto max-w-7xl"
+        className="pointer-events-none absolute inset-x-0 top-[18%] z-[2] section-pad mx-auto max-w-7xl"
       >
         <p className="font-display text-[clamp(3.5rem,14vw,11rem)] font-bold leading-[0.75] tracking-[-0.06em] text-transparent [-webkit-text-stroke:1px_color-mix(in_srgb,var(--foreground)_12%,transparent)]">
           STUDIO
         </p>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-24 z-[2] section-pad mx-auto hidden max-w-7xl items-center justify-between text-[10px] uppercase tracking-[0.3em] text-muted/75 md:flex md:top-28">
+      <div className="pointer-events-none absolute inset-x-0 top-24 z-[3] section-pad mx-auto hidden max-w-7xl items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-muted/75 md:flex md:top-28">
         <span>Based remotely · US</span>
         <span className="font-accent normal-case tracking-wide text-foreground/50">
           design that moves
@@ -32,14 +39,14 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-muted"
+          className="mb-4 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.32em] text-neon-lime"
         >
           <span className="h-px w-8 bg-neon-lime" />
           Design + Development
         </motion.p>
 
         <h1
-          className="font-display relative text-[clamp(5rem,20vw,15.5rem)] font-bold leading-[0.78] tracking-[-0.055em] text-brand"
+          className="glitch-once font-display relative text-[clamp(5rem,20vw,15.5rem)] font-bold leading-[0.78] tracking-[-0.055em] text-brand"
           aria-label={siteConfig.name}
         >
           {letters.map((letter, i) => (
@@ -91,8 +98,9 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 border-t border-border/80">
-        <div className="section-pad mx-auto grid max-w-7xl grid-cols-2 gap-4 py-4 text-[10px] uppercase tracking-[0.22em] text-muted md:grid-cols-4 md:py-5">
+      <div className="relative z-10">
+        <div aria-hidden className="hazard hazard-thin w-full" />
+        <div className="section-pad mx-auto grid max-w-7xl grid-cols-2 gap-4 py-4 font-mono text-[10px] uppercase tracking-[0.22em] text-muted md:grid-cols-4 md:py-5">
           <span>Any kind of website</span>
           <span>Client-shaped builds</span>
           <span className="hidden md:inline">Typography-led</span>
@@ -100,12 +108,6 @@ export function Hero() {
         </div>
       </div>
 
-      <motion.div
-        initial={reduce ? false : { scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute bottom-0 left-0 right-0 h-px origin-left bg-gradient-to-r from-neon-magenta via-neon-lime to-neon-teal"
-      />
     </section>
   );
 }

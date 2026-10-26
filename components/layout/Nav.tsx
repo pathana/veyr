@@ -49,7 +49,7 @@ export function Nav() {
           className={cn(
             "mx-auto flex max-w-7xl items-center justify-between transition-all duration-500",
             scrolled
-              ? "h-14 rounded-full border border-white/10 bg-background/75 px-5 shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl md:h-16 md:px-7"
+              ? "clip-chamfer h-14 border border-neon-lime/50 bg-background/85 px-5 backdrop-blur-md md:h-16 md:px-7"
               : "h-16 border border-transparent bg-transparent md:h-20",
           )}
         >
@@ -72,7 +72,7 @@ export function Nav() {
                   href={link.href}
                  
                   className={cn(
-                    "group relative text-sm tracking-wide transition-colors",
+                    "group relative font-mono text-xs uppercase tracking-[0.16em] transition-colors",
                     active ? "text-foreground" : "text-muted hover:text-foreground",
                   )}
                 >

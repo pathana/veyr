@@ -5,6 +5,7 @@ import { founders } from "@/content/team";
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-border bg-surface">
+      <div aria-hidden className="hazard hazard-thin w-full" />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 bottom-[-18%] flex justify-center font-display text-[28vw] font-bold leading-none tracking-[-0.07em] text-transparent [-webkit-text-stroke:1px_color-mix(in_srgb,var(--foreground)_8%,transparent)]"

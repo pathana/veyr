@@ -33,7 +33,8 @@ export function Button({
   disabled,
 }: ButtonProps) {
   const classes = cn(
-    "btn-shine relative inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-medium tracking-[0.04em] transition-[background-color,border-color,color] duration-300 disabled:opacity-50",
+    "btn-shine relative inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-medium tracking-[0.08em] uppercase transition-[background-color,border-color,color] duration-300 disabled:opacity-50",
+    variant !== "ghost" && "clip-chamfer",
     variants[variant],
     className,
   );

@@ -52,6 +52,7 @@
   --color-brand: var(--brand);
   --font-sans: var(--font-outfit);
   --font-display: var(--font-space);
+  --font-mono: var(--font-plex);
 }
 
 html {
@@ -85,8 +86,100 @@ body {
   letter-spacing: 0.01em;
 }
 
+.font-mono {
+  font-family: var(--font-plex), ui-monospace, monospace;
+}
+
 .hero-shell {
   contain: paint;
+}
+
+.pixel-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--neon-teal) 18%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--neon-teal) 12%, transparent) 1px, transparent 1px);
+  background-size: 6px 6px;
+  opacity: 0.35;
+}
+
+.scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 2px,
+    rgb(0 0 0 / 0.18) 2px 3px
+  );
+  opacity: 0.35;
+  animation: scan-drift 9s linear infinite;
+}
+
+.hazard {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--neon-lime) 0 8px,
+    #111 8px 16px
+  );
+  background-size: 22.6px 22.6px;
+  animation: hazard-move 7s linear infinite;
+}
+
+.hazard-thin {
+  height: 6px;
+}
+
+.clip-chamfer {
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.hud-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--neon-lime);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.glitch-once {
+  animation: glitch-pop 0.7s steps(2, end) 0.55s 1 both;
+}
+
+@keyframes hazard-move {
+  to {
+    background-position: 22.6px 0;
+  }
+}
+
+@keyframes scan-drift {
+  to {
+    background-position: 0 12px;
+  }
+}
+
+@keyframes glitch-pop {
+  0% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+  25% {
+    transform: translate(-3px, 0);
+    text-shadow: 3px 0 var(--neon-magenta), -3px 0 var(--neon-teal);
+  }
+  50% {
+    transform: translate(3px, 1px);
+    text-shadow: -2px 0 var(--neon-lime);
+  }
+  100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hazard,
+  .scanlines,
+  .glitch-once {
+    animation: none;
+  }
 }
 
 .grain {
